@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping
+@RequestMapping("/student")
 public class StudentController {
 
 	@Autowired
@@ -42,7 +42,6 @@ public class StudentController {
 	}
 
 	@RequestMapping("/showFormForUpdate")
-
 	public String showFormForUpdate(@RequestParam("studentId") int theId, Model theModel) {
 
 		Student theStudent = studentService.findById(theId);
@@ -86,7 +85,7 @@ public class StudentController {
 			
 			return "redirect:/student/list";
 		}		
-			@RequestMapping
+			@RequestMapping(value="/403")
 			public ModelAndView accesssDenied(Principal user) {
 
 				ModelAndView model = new ModelAndView();
